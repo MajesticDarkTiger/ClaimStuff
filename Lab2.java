@@ -33,8 +33,6 @@ public class Lab2 {
     
 
 
-
-
         //prime
         System.out.println("Enter a number to see if it's a prime number: ");
         int primeNum = scr.nextInt();
