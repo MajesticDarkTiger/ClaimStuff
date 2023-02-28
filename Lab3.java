@@ -15,8 +15,14 @@ public class Lab3 {
         System.out.println(charToRemove);
         proccessOfRemoving(sentence, charToRemove);
 
+        System.out.println("Enter a word ");
+        String newVowelCounter = scr.nextLine();
+        coutVowels(newVowelCounter);
 
-
+        System.out.println("Enter a word you would like to see which letter are repeated and not repeated: ");
+        String newRepNotRep = scr.nextLine();
+        nonRepeated(newRepNotRep);
+        repeatedCharaters(newRepNotRep);
 
 
 
@@ -37,24 +43,54 @@ public class Lab3 {
     }
         
 
-    public static void removeMultipleChar() {
-            // Write a method to remove duplicate characters from a string.
+    
 
-
-    }
-
-    public static void coutVowels() {
+    public static void coutVowels(String newVowelCounter) {
             // Write a method to count the number of vowels and consonants in a string. E.g. if the input is
             // Java the result should be 2 vowels and 2 consonants
+        newVowelCounter = newVowelCounter.toLowerCase();
+        int vCount = 0;
+        int cCount = 0;
 
+        for (int i = 0; i < newVowelCounter.length(); i++) {
+            if (newVowelCounter.charAt(i) == 'a' || newVowelCounter.charAt(i) == 'e' || newVowelCounter.charAt(i) == 'i' || newVowelCounter.charAt(i) == 'o' || newVowelCounter.charAt(i) == 'u') {
+                ++vCount;
+            } else if (newVowelCounter.charAt(i) >= 'a' && newVowelCounter.charAt(i)<='z'){
+                ++cCount;
+            }
+        }
+        System.out.println("Number of Vowels: " + vCount);   
+        System.out.println("Number of consonants: " + cCount);
 
     }
 
-    public static void nonRepeatedAndRepeated() {
+    public static void nonRepeated(String newRepNonRep) {
             // Write a method to display first non repeated character of a string then the repeating characters.
             // E.g. input morning should display morignn
 
+           newRepNonRep = newRepNonRep.toLowerCase();
+            for(char i :newRepNonRep.toCharArray()){
+                if ( newRepNonRep.indexOf(i) == newRepNonRep.lastIndexOf(i)) {
+                    System.out.println("Non-repeating characters are: "+ i);
+                    break;
+                }
+
+            }
+
     }
+    public static void repeatedCharaters(String newRepNonRep) {
 
-
+        char[] charArrayOfRep = newRepNonRep.toCharArray();
+        int cnt = 0;
+        System.out.println("Repeated characters are: ");
+        for (int i = 0; i < newRepNonRep.length(); i++) {
+            for (int j = i + 1; j < newRepNonRep.length(); j++) {
+                if (charArrayOfRep[i] == charArrayOfRep[j]) {
+                    System.out.print(charArrayOfRep[j] + ",");
+                    cnt++;
+                    break;
+                }
+            }
+        }
+    }
 }
