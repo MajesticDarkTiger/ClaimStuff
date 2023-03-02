@@ -1,4 +1,4 @@
-package homeWork;
+package homeWork.GroupExcersices;
 
 import java.util.Scanner;
 
