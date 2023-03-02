@@ -9,11 +9,12 @@ public class Lab3 {
         Scanner scr = new Scanner(System.in);
         System.out.print("Enter a string: ");
         String sentence = scr.nextLine();
-        System.out.print("Enter what character you wish to be removed: ");
+        System.out.print("Enter what character you wish to be removed (Ex. Aa): ");
         String letterRemove = scr.nextLine();
-        char charToRemove = letterRemove.charAt(0);
-        System.out.println(charToRemove);
-        proccessOfRemoving(sentence, charToRemove);
+        char upperCase = letterRemove.charAt(0);
+        char lowerCase = letterRemove.charAt(1);
+        // char charToRemove = letterRemove.charAt(0);
+        proccessOfRemoving(sentence, upperCase, lowerCase);
 
         System.out.println("Enter a word ");
         String newVowelCounter = scr.nextLine();
@@ -29,13 +30,16 @@ public class Lab3 {
         scr.close();
     }
 
-    public static void proccessOfRemoving(String sentence, char charToRemove) {
+    public static void proccessOfRemoving(String sentence, char upperCase, char lowerCase) {
 
         char[] charArrayOfSentence;
         charArrayOfSentence = sentence.toCharArray();
         
         for (int i = 0; i < charArrayOfSentence.length; i++) {
-            if(charToRemove == charArrayOfSentence[i]) {
+            if(upperCase == charArrayOfSentence[i]) {
+                charArrayOfSentence[i] = ' ';
+            }
+            if(lowerCase == charArrayOfSentence[i]) {
                 charArrayOfSentence[i] = ' ';
             }
         }
