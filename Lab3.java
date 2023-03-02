@@ -16,11 +16,11 @@ public class Lab3 {
         // char charToRemove = letterRemove.charAt(0);
         proccessOfRemoving(sentence, upperCase, lowerCase);
 
-        System.out.println("Enter a word ");
+        System.out.print("Enter a word ");
         String newVowelCounter = scr.nextLine();
         coutVowels(newVowelCounter);
 
-        System.out.println("Enter a word you would like to see which letter are repeated and not repeated: ");
+        System.out.print("Enter a word you would like to see which letter are repeated and not repeated: ");
         String newRepNotRep = scr.nextLine();
         nonRepeated(newRepNotRep);
         repeatedCharaters(newRepNotRep);
@@ -75,8 +75,8 @@ public class Lab3 {
            newRepNonRep = newRepNonRep.toLowerCase();
             for(char i :newRepNonRep.toCharArray()){
                 if ( newRepNonRep.indexOf(i) == newRepNonRep.lastIndexOf(i)) {
-                    System.out.println("Non-repeating characters are: "+ i);
-                    break;
+                    System.out.print("Non-repeating characters are: "+ i);
+
                 }
 
             }
