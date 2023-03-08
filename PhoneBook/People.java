@@ -17,11 +17,9 @@ public class People {
 
     
 
-    public People(String firstName, String middleName, String lastName, Address address, Long phoneNumber) {
+    public People(String firstName, String lastName, Long phoneNumber) {
         this.firstName = firstName;
-        this.middleName = middleName;
         this.lastName = lastName;
-        this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
