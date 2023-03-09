@@ -13,6 +13,9 @@ public class Main {
         People fakePerson = new People("Micheal", "Edwards",
          1231231234L);
         phoneBook.add(fakePerson);
+        People fakePerson3 = new People("Micheal", "Edwards",
+         4558887777L);
+        phoneBook.add(fakePerson);
         People fakePerson2 = new People("Mike", "Alex", 
          3224115467L);
         phoneBook.add(fakePerson2);
@@ -160,7 +163,11 @@ public class Main {
         String firstName = scr.nextLine();
         for (People person : phoneBook) {
             if (firstName.equals(person.getFirstName())) {
-                System.out.println(person);
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
             }
 
         }
@@ -170,30 +177,84 @@ public class Main {
 
         System.out.println("Enter the last name: ");
         String lastName = scr.nextLine();
+        for (People person : phoneBook) {
+            if (lastName.equals(person.getLastName())) {
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
+            }
+
+        }
 
     }
     public static void searchByFullName() {
 
         System.out.println("Enter the full name: ");
         String fullName = scr.nextLine();
+        String[] spltFullName = fullName.split(" ", 0);
+        String firstName = spltFullName[0];
+        String lastName = spltFullName[1];
+        for (People person : phoneBook) {
+            if (firstName.equals(person.getFirstName()) && lastName.equals(person.getLastName())) {
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
+            }
+
+        }
 
     }
     public static void searchByPhoneNumber() {
 
         System.out.println("Enter the phone number: ");
         Long phoneNumber = scr.nextLong();
+        for (People person : phoneBook) {
+            if (phoneNumber.equals(person.getPhoneNumber())) {
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
+            }
+
+        }
 
     }
     public static void searchByCity() {
 
         System.out.println("Enter the city: ");
         String city = scr.nextLine();
+        for (People person : phoneBook) {
+            if (city.equals(person.getAddress())) {
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
+            }
+
+        }
 
     }
     public static void searchByState() {
 
         System.out.println("Enter the state: ");
         String state = scr.nextLine();
+        for (People person : phoneBook) {
+            if (state.equals(person.getAddress())) {
+                System.out.println(person.getFirstName());
+                System.out.println(person.getMiddleName());
+                System.out.println(person.getLastName());
+                System.out.println(person.getAddress());
+                System.out.println(person.getPhoneNumber());
+            }
+
+        }
+        
 
     }
     //
