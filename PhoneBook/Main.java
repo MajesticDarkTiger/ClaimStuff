@@ -1,5 +1,6 @@
 package homeWork.PhoneBook;
 
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -93,12 +94,14 @@ public class Main {
 
         System.out.print("What is your APT/House number? ");
         int aptHouseNumber = scr.nextInt();
+        scr.nextLine();
 
         System.out.print("What is your street name? ");
         String streetName = scr.nextLine();
 
         System.out.print("Which city do you live in? ");
         String city = scr.nextLine();
+        
 
         System.out.print("Which state do you live in? ");
         String state = scr.nextLine();
@@ -229,7 +232,7 @@ public class Main {
         System.out.println("Enter the city: ");
         String city = scr.nextLine();
         for (People person : phoneBook) {
-            if (city.equals(person.getAddress())) {
+            if (city.equals(person.getAddress().getCity())) {
                 System.out.println(person.getFirstName());
                 System.out.println(person.getMiddleName());
                 System.out.println(person.getLastName());
@@ -245,7 +248,7 @@ public class Main {
         System.out.println("Enter the state: ");
         String state = scr.nextLine();
         for (People person : phoneBook) {
-            if (state.equals(person.getAddress())) {
+            if (state.equals(person.getAddress().getState())) {
                 System.out.println(person.getFirstName());
                 System.out.println(person.getMiddleName());
                 System.out.println(person.getLastName());
@@ -263,9 +266,107 @@ public class Main {
 
     public static void deleteRecordByNumber() {
 
+        System.out.println("Enter the phone number you wish to delete: ");
+        Long phoneNumber = scr.nextLong();
+        for (People person : phoneBook){
+
+            if (phoneNumber.equals(person.getPhoneNumber())) {
+
+                System.out.println("Are you sure you want to delete this contact? (Y/N)");
+                String yOrN = scr.nextLine();
+                if (yOrN == "Y") {
+                    phoneBook.remove(person);
+                    break;
+                } 
+
+            }
+
+        }
+
     }
 
     public static void updateAGivenRecord() {
+        int choice;
+        Address address;
+        System.out.println("Enter the phone number you would like to update: ");
+        Long phoneN = scr.nextLong();
+
+        for (People person : phoneBook) {
+
+            if(phoneN.equals(person.getPhoneNumber())) {
+                address = person.getAddress();
+
+                System.out.println("What would you like to update? ");
+                System.out.println("1) First Name");
+                System.out.println("2) Middle Name");
+                System.out.println("3) Last Name");
+                System.out.println("4) Address");
+                System.out.println("5) Phone Number");
+                choice = scr.nextInt();
+                scr.nextLine();
+
+                switch (choice) {
+                    case 1:
+                    System.out.println("What would you like to change your first name to: ");
+                    String firstName = scr.nextLine();
+                    person.setFirstName(firstName);
+                    break;
+                    case 2:
+                    System.out.println("What would you like to change your middle name to: ");
+                    String middleName =scr.nextLine();
+                    person.setMiddleName(middleName);
+                    break;
+                    case 3:
+                    System.out.println("What would you like to change your last name to: ");
+                    String lastName = scr.nextLine();
+                    person.setLastName(lastName);
+                    break;
+                    case 4:
+                    System.out.println("What would you like to change your address to: ");
+                    updateAddress(person, address);
+
+                    break;
+                    case 5:
+                    System.out.println("What would you like to change your phone number to: ");
+                    Long phoneNumber = scr.nextLong();
+                    person.setPhoneNumber(phoneNumber);
+                    break;
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public static Address updateAddress(People person, Address address) {
+
+        System.out.print("What is your APT/House number? ");
+        int aptHouseNumber = scr.nextInt();
+        scr.nextLine();
+
+        System.out.print("What is your street name? ");
+        String streetName = scr.nextLine();
+
+        System.out.print("Which city do you live in? ");
+        String city = scr.nextLine();
+        
+
+        System.out.print("Which state do you live in? ");
+        String state = scr.nextLine();
+
+        System.out.print("What is your zip code? ");
+        String zipCode = scr.nextLine();
+
+        address.setAptHouseNumber(aptHouseNumber);
+        address.setStreetName(streetName);
+        address.setCity(city);
+        address.setState(state);
+        address.setZipCode(zipCode);
+        return address;
+        
 
     }
 
