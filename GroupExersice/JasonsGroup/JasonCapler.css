@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.header{
+    color:white;
+    text-align: center;
+}
+
+.middle{
+    margin: 50px auto 50px;
+}
+
+.job-title{
+    font-size: 24px;
+    border-radius: 25%;
+    border: solid;
+}
+
+.job-salary{
+    font-size: 24px;
+    border-radius: 25%;
+    border: solid;
+    
+}
+
+.center{
+    margin-left: 41.5%;
+}

@@ -1,0 +1,22 @@
+body{
+    background-color: purple;
+    color: azure;
+}
+div.one{
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.table{
+    margin: 50px auto 50px;
+}
+
+.nameFonts{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: solid 1px;
+    text-decoration: underline;
+}
+
